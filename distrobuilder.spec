@@ -17,9 +17,14 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 %define		goinstall go install -ldflags "${LDFLAGS:-} -B 0x$(head -c20 /dev/urandom|od -An -tx1|tr -d ' \\n')" -a -v -x
 
 %description
-Distrobuilder builds images based on image definition is a YAML document which describes the source of the image, its package manager, what packages to install/remove for specific image variants, os releases and architectures, as well as additional files to generate and arbitrary actions to execute as part of the image build process.
+Distrobuilder builds images based on image definition is a YAML
+document which describes the source of the image, its package manager,
+what packages to install/remove for specific image variants, os
+releases and architectures, as well as additional files to generate
+and arbitrary actions to execute as part of the image build process.
 
-The output is either a plain root filesystem, a LXD image or a LXC image.
+The output is either a plain root filesystem, a LXD image or a LXC
+image.
 
 %prep
 %setup -q
